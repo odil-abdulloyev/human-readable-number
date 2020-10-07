@@ -30,7 +30,9 @@ module.exports = function toReadable(number) {
   if (x === 0 && y === 0 && z === 0) {
     return 'zero';
   }
-  
+  if (Object.getOwnPropertyNames(names).indexOf(`${number}`) !== -1) {
+    return names[`${number}`];
+  }
   if (y === 0 && z !== 0) {
     return `${a} hundred ${names[z]}`;
   }
